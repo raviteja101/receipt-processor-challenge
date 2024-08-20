@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /receipts
+  tomcat:
+    uri-encoding: UTF-8
+  max-http-header-size: 64KB
+
+springdoc:
+  show-actuator: true
+  swagger-ui:
+    path: /swagger-ui-custom.html
+    operationsSorter=method:
+
+
+cor:
+  chain:
+    rules:
+      - retailerNamePointsHandler
+      - itemsPricePointsHandler
+      - itemTotalPricePointsMultipleHandler
+      - numberOfItemsPointsHandler
+      - itemsDescriptionLengthPointsHandler
+      - purchaseDatePointsHandler
+      - purchaseTimePointsHandler
